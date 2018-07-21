@@ -11,7 +11,8 @@ export class HeroFormComponent implements OnInit {
   hero = {
     name: 'ngWizard',
     realName: 'Maxim Koretskyi',
-    superpower: 'Really Smart'
+    superpower: 'Really Smart',
+    twitter: '@maxim_koretskyi'
   };
 
   @ViewChild(DebugComponent) debugCmp: DebugComponent;

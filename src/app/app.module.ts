@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TemplateformModule } from './templateform/templateform.module';
+import { AngularformsModule } from './angularforms/angularforms.module';
 import { SharedModule } from './shared';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { SharedModule } from './shared';
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    TemplateformModule
+    AngularformsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

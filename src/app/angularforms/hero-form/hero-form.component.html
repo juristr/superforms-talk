@@ -3,7 +3,8 @@
 
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <mat-form-field class="full-width">
-      <input matInput placeholder="Name" [(ngModel)]="hero.name" name="name">
+      <input matInput placeholder="Name" [(ngModel)]="hero.name" name="name" #nameInput="ngModel" required>
+      <mat-error *ngIf="nameInput.invalid && nameInput.hasError('required')">Name is required</mat-error>
     </mat-form-field>
     <mat-form-field class="full-width">
       <input matInput placeholder="Real Name" [(ngModel)]="hero.realName" name="realName">

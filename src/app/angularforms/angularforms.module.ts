@@ -9,4 +9,4 @@ import { FormsModule } from '@angular/forms';
   declarations: [HeroFormComponent],
   exports: [HeroFormComponent]
 })
-export class TemplateformModule {}
+export class AngularformsModule {}
