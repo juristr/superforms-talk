@@ -10,7 +10,7 @@ export class HeroFormComponent implements OnInit {
   powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
   hero = {
     name: 'ngWizard',
-    realName: '',
+    realName: 'Maxim Koretskyi',
     superpower: 'Really Smart'
   };
 

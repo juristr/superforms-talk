@@ -19,7 +19,7 @@ import { MatTab, MatTabGroup } from '@angular/material';
           <mat-tab label="Model">
             <pre>{{ model | json }}</pre>
           </mat-tab>
-          <mat-tab #submittedTab label="Submitted" [hidden]="!submittedValue">
+          <mat-tab label="Submitted" [disabled]="submittedValue === null">
             <p>You just submitted ({{ submittedDate | date: 'short' }}):</p>
             <pre>{{ submittedValue | json }}</pre>
           </mat-tab>
@@ -36,19 +36,23 @@ import { MatTab, MatTabGroup } from '@angular/material';
       .mat-expansion-panel-header {
         background: rgba(0, 0, 0, 0.03);
       }
+
+      .mat-expansion-panel-header.mat-expanded:focus,
+      .mat-expansion-panel-header.mat-expanded:hover {
+        background: rgba(0, 0, 0, 0.03);
+      }
     `
   ]
 })
 export class DebugComponent implements OnInit {
   @Input() form: FormGroup;
   @Input() model;
-  submittedValue;
+  submittedValue = null;
   isExpanded = false;
   selectedIndex = 0;
   submittedDate = null;
 
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
-  @ViewChild('submittedTab') submittedTab: MatTab;
 
   constructor() {}
 
