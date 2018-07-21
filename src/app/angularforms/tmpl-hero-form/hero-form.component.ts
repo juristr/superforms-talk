@@ -6,7 +6,7 @@ import { DebugComponent } from '../../shared/debug/debug.component';
   selector: 'app-hero-form',
   templateUrl: './hero-form.component.html'
 })
-export class HeroFormComponent implements OnInit {
+export class HeroFormTemplateComponent implements OnInit {
   powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
   hero = {
     name: 'ngWizard',
