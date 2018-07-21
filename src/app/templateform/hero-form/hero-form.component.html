@@ -1,21 +1,23 @@
-<h1>Hero Form</h1>
+<mat-card>
+  <h1>Hero Form</h1>
 
-<form #form="ngForm">
-  <mat-form-field class="full-width">
-    <input matInput placeholder="Name" [(ngModel)]="hero.name" name="name">
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <input matInput placeholder="Age" [(ngModel)]="hero.name" name="age">
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <mat-select placeholder="Superpower" [(ngModel)]="hero.superpower" name="superpower">
-      <mat-option *ngFor="let power of powers" [value]="power">{{ power }}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div class="button-row">
-    <button type="reset" mat-raised-button>Clear</button>
-    <button mat-raised-button color="primary">Submit</button>
-  </div>
-</form>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Name" [(ngModel)]="hero.name" name="name">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Real Name" [(ngModel)]="hero.realName" name="realName">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Superpower" [(ngModel)]="hero.superpower" name="superpower">
+        <mat-option *ngFor="let power of powers" [value]="power">{{ power }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="button-row" style="display:flex; flex-direction: row; justify-content: space-between;">
+      <button type="reset" mat-raised-button>Clear</button>
+      <button mat-raised-button color="primary">Submit</button>
+    </div>
+  </form>
+</mat-card>
 
 <app-form-debug [form]="form.value" [model]="hero"></app-form-debug>

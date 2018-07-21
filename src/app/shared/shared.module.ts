@@ -6,7 +6,8 @@ import {
   MatCardModule,
   MatSelectModule,
   MatButtonModule,
-  MatTabsModule
+  MatTabsModule,
+  MatExpansionModule
 } from '@angular/material';
 import { DebugComponent } from './debug/debug.component';
 
@@ -15,7 +16,8 @@ const sharedStuff = [
   MatCardModule,
   MatSelectModule,
   MatButtonModule,
-  MatTabsModule
+  MatTabsModule,
+  MatExpansionModule
 ];
 
 @NgModule({

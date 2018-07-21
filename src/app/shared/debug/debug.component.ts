@@ -1,37 +1,63 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Form, FormGroup } from '@angular/forms';
+import { MatTab, MatTabGroup } from '@angular/material';
 
 @Component({
   selector: 'app-form-debug',
   template: `
-    <mat-card>
-      <mat-card-subtitle>
-        Debug
-      </mat-card-subtitle>
+    <mat-expansion-panel [(expanded)]="isExpanded">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Debug
+        </mat-panel-title>
+      </mat-expansion-panel-header>
       <mat-card-content>
-        <mat-tab-group>
+        <mat-tab-group [(selectedIndex)]="selectedIndex">
           <mat-tab label="Form">
             <pre>{{ form | json }}</pre>
           </mat-tab>
           <mat-tab label="Model">
             <pre>{{ model | json }}</pre>
           </mat-tab>
+          <mat-tab #submittedTab label="Submitted" [hidden]="!submittedValue">
+            <p>You just submitted ({{ submittedDate | date: 'short' }}):</p>
+            <pre>{{ submittedValue | json }}</pre>
+          </mat-tab>
         </mat-tab-group>
       </mat-card-content>
-    </mat-card>
+    </mat-expansion-panel>
   `,
   styles: [
     `
       :host {
         margin: 20px;
       }
+
+      .mat-expansion-panel-header {
+        background: rgba(0, 0, 0, 0.03);
+      }
     `
   ]
 })
 export class DebugComponent implements OnInit {
-  @Input() form;
+  @Input() form: FormGroup;
   @Input() model;
+  submittedValue;
+  isExpanded = false;
+  selectedIndex = 0;
+  submittedDate = null;
+
+  @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
+  @ViewChild('submittedTab') submittedTab: MatTab;
 
   constructor() {}
 
   ngOnInit() {}
+
+  displaySubmit(value: any) {
+    this.submittedDate = new Date();
+    this.submittedValue = value;
+    this.isExpanded = true;
+    this.selectedIndex = 2;
+  }
 }
