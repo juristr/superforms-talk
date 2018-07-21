@@ -9,6 +9,10 @@ export class AppComponent {
     {
       label: 'Template Driven',
       path: '/angularforms/template'
+    },
+    {
+      label: 'Reactive',
+      path: '/angularforms/reactive'
     }
   ];
 }
