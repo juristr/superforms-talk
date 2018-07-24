@@ -75,7 +75,7 @@
     typescript "~2.9.1"
     webpack-sources "^1.1.0"
 
-"@angular-devkit/core@0.6.8":
+"@angular-devkit/core@0.6.8", "@angular-devkit/core@^0.6.5":
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.6.8.tgz#3b09d97bd2588f0091df11921f7ed772431806aa"
   dependencies:
@@ -84,7 +84,7 @@
     rxjs "^6.0.0"
     source-map "^0.5.6"
 
-"@angular-devkit/schematics@0.6.8":
+"@angular-devkit/schematics@0.6.8", "@angular-devkit/schematics@^0.6.5":
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.6.8.tgz#6360a0271f1f422862bf932a03b3741e76ac5ff0"
   dependencies:
@@ -197,7 +197,27 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@schematics/angular@0.6.8":
+"@ngx-formly/core@^4.0.0":
+  version "4.6.6"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/core/-/core-4.6.6.tgz#936d1090b3a0f2c5a3ed6de7eb13c37b10fc8963"
+  dependencies:
+    tslib "^1.7.1"
+
+"@ngx-formly/material@^4.0.0":
+  version "4.6.6"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/material/-/material-4.6.6.tgz#fc0e27b71103c89f79084e79dad595acdda8c180"
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngx-formly/schematics@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/schematics/-/schematics-0.0.1.tgz#496062bd7497b81c2495b95de2a7c7455740fead"
+  dependencies:
+    "@angular-devkit/core" "^0.6.5"
+    "@angular-devkit/schematics" "^0.6.5"
+    "@schematics/angular" "^0.6.5"
+
+"@schematics/angular@0.6.8", "@schematics/angular@^0.6.5":
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.6.8.tgz#a8d1afc33e77160296b0a8b3d02f0ee4dfe9d1d2"
   dependencies:

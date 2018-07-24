@@ -7,6 +7,9 @@ import { AngularformsModule } from './angularforms/angularforms.module';
 import { SharedModule } from './shared';
 import { AppRoutingModule } from './app-routing.module';
 import { HomemadeDynamicModule } from './homemade-dynamic/homemade-dynamic.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +19,10 @@ import { HomemadeDynamicModule } from './homemade-dynamic/homemade-dynamic.modul
     SharedModule,
     AngularformsModule,
     HomemadeDynamicModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
