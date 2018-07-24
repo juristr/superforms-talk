@@ -13,6 +13,14 @@ export class AppComponent {
     {
       label: 'Reactive',
       path: '/angularforms/reactive'
+    },
+    {
+      label: 'Simple Dyn',
+      path: '/homemade-dynamic/simple'
+    },
+    {
+      label: 'Dyn Person Form',
+      path: '/homemade-dynamic/dyn-person-form'
     }
   ];
 }

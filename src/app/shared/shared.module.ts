@@ -10,6 +10,7 @@ import {
   MatExpansionModule
 } from '@angular/material';
 import { DebugComponent } from './debug/debug.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const sharedStuff = [
   MatInputModule,
@@ -17,7 +18,8 @@ const sharedStuff = [
   MatSelectModule,
   MatButtonModule,
   MatTabsModule,
-  MatExpansionModule
+  MatExpansionModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({

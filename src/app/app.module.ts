@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularformsModule } from './angularforms/angularforms.module';
 import { SharedModule } from './shared';
 import { AppRoutingModule } from './app-routing.module';
+import { HomemadeDynamicModule } from './homemade-dynamic/homemade-dynamic.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     SharedModule,
     AngularformsModule,
+    HomemadeDynamicModule,
     AppRoutingModule
   ],
   providers: [],

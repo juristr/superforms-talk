@@ -5,7 +5,7 @@ import { MatTab, MatTabGroup } from '@angular/material';
 @Component({
   selector: 'app-form-debug',
   template: `
-    <mat-expansion-panel [(expanded)]="isExpanded">
+    <mat-expansion-panel [(expanded)]="isExpanded" (expandedChange)="onExpandedChange($event)">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Debug
@@ -13,10 +13,10 @@ import { MatTab, MatTabGroup } from '@angular/material';
       </mat-expansion-panel-header>
       <mat-card-content>
         <mat-tab-group [(selectedIndex)]="selectedIndex">
-          <mat-tab label="Form">
+          <mat-tab label="Form value">
             <pre>{{ form | json }}</pre>
           </mat-tab>
-          <mat-tab label="Model">
+          <mat-tab label="Model" [disabled]="!model">
             <pre>{{ model | json }}</pre>
           </mat-tab>
           <mat-tab label="Submitted" [disabled]="submittedValue === null">
@@ -56,7 +56,13 @@ export class DebugComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isExpanded = sessionStorage.getItem('debug-expanded') === 'true';
+  }
+
+  onExpandedChange(isExpanded) {
+    sessionStorage.setItem('debug-expanded', isExpanded);
+  }
 
   displaySubmit(value: any) {
     this.submittedDate = new Date();
