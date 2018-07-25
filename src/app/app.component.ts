@@ -22,5 +22,9 @@ export class AppComponent {
       label: 'Dyn Person Form',
       path: '/homemade-dynamic/dyn-person-form'
     }
+    {
+      label: 'Basics - Person Simple',
+      path: '/formly-basics/person-simple'
+    }
   ];
 }

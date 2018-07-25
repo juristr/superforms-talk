@@ -4,6 +4,7 @@ import { HeroFormTemplateComponent } from './angularforms/tmpl-hero-form/hero-fo
 import { HeroFormReactiveComponent } from './angularforms/reactive-hero-form/hero-form.component';
 import { SimpleDynamicComponent } from './homemade-dynamic/simple/simple-dynamic.component';
 import { DynamicPersonFormComponent } from './homemade-dynamic/person-form/dyn-person-form.component';
+import { PersonSimpleComponent } from './formly-basics/person-simple/person-simple.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,15 @@ const routes: Routes = [
       {
         path: 'dyn-person-form',
         component: DynamicPersonFormComponent
+      }
+    ]
+  },
+  {
+    path: 'formly-basics',
+    children: [
+      {
+        path: 'person-simple',
+        component: PersonSimpleComponent
       }
     ]
   }

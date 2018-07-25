@@ -11,6 +11,7 @@ import {
 } from '@angular/material';
 import { DebugComponent } from './debug/debug.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
 
 const sharedStuff = [
   MatInputModule,
@@ -19,7 +20,8 @@ const sharedStuff = [
   MatButtonModule,
   MatTabsModule,
   MatExpansionModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  FormlyModule
 ];
 
 @NgModule({
