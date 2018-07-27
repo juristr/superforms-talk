@@ -13,19 +13,20 @@ export class FormValidationComponent implements OnInit {
 
   cities$ = of([
     {
+      value: null,
+      label: ' -- '
+    },
+    {
       value: 1,
-      label: 'Bolzano',
-      group: 'Europe'
+      label: 'Bolzano'
     },
     {
       value: 2,
-      label: 'Berlin',
-      group: 'Europe'
+      label: 'Berlin'
     },
     {
       value: 3,
-      label: 'San Francisco',
-      group: 'North America'
+      label: 'San Francisco'
     }
   ]);
 
@@ -60,6 +61,16 @@ export class FormValidationComponent implements OnInit {
       templateOptions: {
         label: 'city',
         options: this.cities$
+      }
+    },
+    {
+      key: 'zipCode',
+      type: 'input',
+      templateOptions: {
+        label: 'Zip Code'
+      },
+      expressionProperties: {
+        'templateOptions.required': model => !!model.cityId
       }
     }
   ];
