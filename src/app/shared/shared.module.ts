@@ -7,11 +7,17 @@ import {
   MatSelectModule,
   MatButtonModule,
   MatTabsModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatMenuModule,
+  MatListModule
 } from '@angular/material';
 import { DebugComponent } from './debug/debug.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
+import { RouterModule } from '@angular/router';
 
 const sharedStuff = [
   MatInputModule,
@@ -19,9 +25,15 @@ const sharedStuff = [
   MatSelectModule,
   MatButtonModule,
   MatTabsModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatToolbarModule,
   MatExpansionModule,
   ReactiveFormsModule,
-  FormlyModule
+  FormlyModule,
+  RouterModule
 ];
 
 @NgModule({
