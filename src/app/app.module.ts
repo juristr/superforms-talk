@@ -16,7 +16,11 @@ import { SharedModule } from './shared';
     SharedModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormlyModule.forRoot(),
+    FormlyModule.forRoot({
+      validationMessages: [
+        { name: 'required', message: 'This field is required' }
+      ]
+    }),
     FormlyMaterialModule
   ],
   providers: [],
