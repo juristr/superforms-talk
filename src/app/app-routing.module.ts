@@ -19,6 +19,11 @@ const routes: Routes = [
   {
     path: 'formly-basics',
     loadChildren: './formly-basics/formly-basics.module#FormlyBasicsModule'
+  },
+  {
+    path: 'formly-advanced',
+    loadChildren:
+      './formly-advanced/formly-advanced.module#FormlyAdvancedModule'
   }
 ];
 

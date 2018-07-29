@@ -17,7 +17,11 @@ export class AppComponent implements OnDestroy {
     },
     {
       label: 'Formly Basics',
-      path: '/formly-basics/person-simple'
+      path: '/formly-basics'
+    },
+    {
+      label: 'Formly Adv',
+      path: '/formly-advanced'
     }
   ];
   mobileQuery: MediaQueryList;
