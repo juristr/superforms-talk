@@ -18,6 +18,7 @@ import { DebugComponent } from './debug/debug.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const sharedStuff = [
   MatInputModule,
@@ -33,7 +34,8 @@ const sharedStuff = [
   MatExpansionModule,
   ReactiveFormsModule,
   FormlyModule,
-  RouterModule
+  RouterModule,
+  NgSelectModule
 ];
 
 @NgModule({

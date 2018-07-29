@@ -7,9 +7,10 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared';
+import { NgSelectFormlyComponent } from './formly-types/ng-select.type';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NgSelectFormlyComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,6 +20,12 @@ import { SharedModule } from './shared';
     FormlyModule.forRoot({
       validationMessages: [
         { name: 'required', message: 'This field is required' }
+      ],
+      types: [
+        {
+          name: 'my-autocomplete',
+          component: NgSelectFormlyComponent
+        }
       ]
     }),
     FormlyMaterialModule

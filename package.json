@@ -22,12 +22,13 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "@ng-select/ng-select": "^2.3.5",
+    "@ngx-formly/core": "^4.0.0",
+    "@ngx-formly/material": "^4.0.0",
     "@ngx-formly/schematics": "^0.0.1",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26",
-    "@ngx-formly/core": "^4.0.0",
-    "@ngx-formly/material": "^4.0.0"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.1",

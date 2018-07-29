@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryShellComponent } from './category-shell.component';
 import { CascadingSelectsComponent } from './cascading-selects/cascading-selects.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'cascading-selects',
         component: CascadingSelectsComponent
+      },
+      {
+        path: 'autocomplete',
+        component: AutocompleteComponent
       }
     ]
   }

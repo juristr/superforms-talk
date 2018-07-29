@@ -4,12 +4,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 import { DebugComponent } from '../../shared/debug/debug.component';
 import { of, Observable, Subject } from 'rxjs';
 import { map, tap, filter, takeUntil } from 'rxjs/operators';
-
-interface City {
-  value: number;
-  label: string;
-  nationId: number;
-}
+import { CityService } from '../../services/city.service';
 
 @Component({
   selector: 'app-cascading-selects',
@@ -19,57 +14,8 @@ export class CascadingSelectsComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
   @ViewChild(DebugComponent) debugCmp: DebugComponent;
 
-  nations$ = of([
-    {
-      value: null,
-      label: ' -- '
-    },
-    {
-      value: 1,
-      label: 'Italy'
-    },
-    {
-      value: 2,
-      label: 'Germany'
-    },
-    {
-      value: 3,
-      label: 'U.S.'
-    }
-  ]);
-
-  cities$: Observable<City[]> = of([
-    {
-      value: null,
-      label: ' -- ',
-      nationId: null
-    },
-    {
-      value: 1,
-      label: 'Bolzano',
-      nationId: 1
-    },
-    {
-      value: 12,
-      label: 'Rome',
-      nationId: 1
-    },
-    {
-      value: 2,
-      label: 'Berlin',
-      nationId: 2
-    },
-    {
-      value: 21,
-      label: 'Munich',
-      nationId: 2
-    },
-    {
-      value: 3,
-      label: 'San Francisco',
-      nationId: 3
-    }
-  ]);
+  nations$ = this.cityService.getNations();
+  cities$ = this.cityService.getCities();
 
   form = new FormGroup({});
   model: any = {};
@@ -110,7 +56,7 @@ export class CascadingSelectsComponent implements OnInit, OnDestroy {
     }
   ];
 
-  constructor() {}
+  constructor(private cityService: CityService) {}
 
   ngOnInit() {}
 
