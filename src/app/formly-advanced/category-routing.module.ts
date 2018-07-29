@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryShellComponent } from './category-shell.component';
 import { CascadingSelectsComponent } from './cascading-selects/cascading-selects.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { PersonSimpleComponent } from './custom-dsl/person-simple.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'autocomplete',
         component: AutocompleteComponent
+      },
+      {
+        path: 'custom-dsl',
+        component: PersonSimpleComponent
       }
     ]
   }

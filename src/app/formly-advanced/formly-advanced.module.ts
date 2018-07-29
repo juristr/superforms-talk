@@ -6,9 +6,15 @@ import { CascadingSelectsComponent } from './cascading-selects/cascading-selects
 import { SharedModule } from '../shared';
 import { CategoryShellComponent } from './category-shell.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { PersonSimpleComponent } from './custom-dsl/person-simple.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule, CategoryRoutingModule],
-  declarations: [CategoryShellComponent, CascadingSelectsComponent, AutocompleteComponent]
+  declarations: [
+    CategoryShellComponent,
+    CascadingSelectsComponent,
+    PersonSimpleComponent,
+    AutocompleteComponent
+  ]
 })
 export class FormlyAdvancedModule {}

@@ -6,5 +6,9 @@ export const navLinks = [
   {
     label: 'Autocomplete',
     path: 'autocomplete'
+  },
+  {
+    label: 'Custom DSL',
+    path: 'custom-dsl'
   }
 ];

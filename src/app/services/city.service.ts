@@ -33,7 +33,7 @@ export class CityService {
   }
 
   getCities(): Observable<City[]> {
-    return of([
+    return of(<City[]>[
       {
         value: null,
         label: ' -- ',
