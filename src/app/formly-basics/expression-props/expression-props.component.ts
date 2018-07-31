@@ -4,6 +4,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 import { DebugComponent } from '../../shared/debug/debug.component';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { CityService } from '../../services/city.service';
 
 @Component({
   selector: 'app-expression-props',
@@ -11,28 +12,6 @@ import { map } from 'rxjs/operators';
 })
 export class ExpressionPropsComponent implements OnInit {
   @ViewChild(DebugComponent) debugCmp: DebugComponent;
-
-  cities$ = of([
-    {
-      value: null,
-      label: ' -- '
-    },
-    {
-      value: 1,
-      label: 'Bolzano',
-      group: 'Europe'
-    },
-    {
-      value: 2,
-      label: 'Berlin',
-      group: 'Europe'
-    },
-    {
-      value: 3,
-      label: 'San Francisco',
-      group: 'North America'
-    }
-  ]);
 
   form = new FormGroup({});
   model: any = {
@@ -61,7 +40,7 @@ export class ExpressionPropsComponent implements OnInit {
       type: 'select',
       templateOptions: {
         label: 'city',
-        options: this.cities$
+        options: this.cityService.getCities()
       }
     },
     {
@@ -90,7 +69,7 @@ export class ExpressionPropsComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(private cityService: CityService) {}
 
   ngOnInit() {}
 

@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { DebugComponent } from '../../shared/debug/debug.component';
 import { of } from 'rxjs';
+import { CityService } from '../../services/city.service';
 
 @Component({
   selector: 'app-person-simple',
@@ -10,24 +11,6 @@ import { of } from 'rxjs';
 })
 export class PersonSimpleComponent implements OnInit {
   @ViewChild(DebugComponent) debugCmp: DebugComponent;
-
-  cities$ = of([
-    {
-      value: 1,
-      label: 'Bolzano',
-      group: 'Europe'
-    },
-    {
-      value: 2,
-      label: 'Berlin',
-      group: 'Europe'
-    },
-    {
-      value: 3,
-      label: 'San Francisco',
-      group: 'North America'
-    }
-  ]);
 
   form = new FormGroup({});
   model: any = {
@@ -71,30 +54,12 @@ export class PersonSimpleComponent implements OnInit {
       type: 'select',
       templateOptions: {
         label: 'city',
-        options: this.cities$,
-        // options: [
-        //   {
-        //     value: 1,
-        //     label: 'Bolzano',
-        //     group: 'Europe'
-        //   },
-        //   {
-        //     value: 2,
-        //     label: 'Berlin',
-        //     group: 'Europe'
-        //   },
-        //   {
-        //     value: 3,
-        //     label: 'San Francisco',
-        //     group: 'North America'
-        //   }
-        // ],
-        groupProp: 'group'
+        options: this.cityService.getCities()
       }
     }
   ];
 
-  constructor() {}
+  constructor(private cityService: CityService) {}
 
   ngOnInit() {}
 
