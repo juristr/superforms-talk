@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { Observable } from 'rxjs';
 
-export abstract class R3FormlyFieldConfig {
+export abstract class MyFormlyFieldConfig {
   key: string;
   label: string;
   formlyConfig?: FormlyFieldConfig;
 }
 
-export abstract class FormlyDataControlConfig extends R3FormlyFieldConfig {
+export abstract class FormlyDataControlConfig extends MyFormlyFieldConfig {
   data?: Observable<any> | any[];
   multiple?: false;
 }
@@ -19,7 +19,7 @@ export abstract class FormlyDataControlConfig extends R3FormlyFieldConfig {
 export class FormlyService {
   constructor() {}
 
-  input(config: R3FormlyFieldConfig): FormlyFieldConfig {
+  input(config: MyFormlyFieldConfig): FormlyFieldConfig {
     let formlyFieldDef: FormlyFieldConfig = {
       key: config.key,
       type: 'input',
@@ -33,7 +33,7 @@ export class FormlyService {
     return formlyFieldDef;
   }
 
-  number(config: R3FormlyFieldConfig): FormlyFieldConfig {
+  number(config: MyFormlyFieldConfig): FormlyFieldConfig {
     const formlyFieldDef: FormlyFieldConfig = {
       templateOptions: {
         type: 'number'
@@ -56,7 +56,7 @@ export class FormlyService {
     return this.input(config);
   }
 
-  textarea(config: R3FormlyFieldConfig): FormlyFieldConfig {
+  textarea(config: MyFormlyFieldConfig): FormlyFieldConfig {
     let formlyFieldDef: FormlyFieldConfig = {
       key: config.key,
       type: 'textarea',
@@ -71,7 +71,7 @@ export class FormlyService {
     return formlyFieldDef;
   }
 
-  date(config: R3FormlyFieldConfig): FormlyFieldConfig {
+  date(config: MyFormlyFieldConfig): FormlyFieldConfig {
     let formlyFieldDef: FormlyFieldConfig = {
       key: config.key,
       type: 'input',
@@ -86,7 +86,7 @@ export class FormlyService {
     return formlyFieldDef;
   }
 
-  datepicker(config: R3FormlyFieldConfig): FormlyFieldConfig {
+  datepicker(config: MyFormlyFieldConfig): FormlyFieldConfig {
     const formlyfieldDef = this.date(config);
     formlyfieldDef.templateOptions.type = 'input';
 
