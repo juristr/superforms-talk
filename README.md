@@ -1,3 +1,8 @@
 # Superforms
 
-_Not intended for production, just me playing around. More to come soon. If you're super curious, ping me [on twitter](https://twitter.com/juristr)_
+Repository with sample code for my talk at ngtalks.io.
+
+## Links
+
+- [ngtalks.io](https://ngtalks.io/)
+   - [Slides](http://bit.ly/ngtalks2018-formly)
