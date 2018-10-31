@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'formly-advanced',
     loadChildren:
       './formly-advanced/formly-advanced.module#FormlyAdvancedModule'
+  },
+  {
+    path: 'angular-sf',
+    loadChildren: './angular-sf/angular-sf.module#AngularSFModule'
   }
 ];
 

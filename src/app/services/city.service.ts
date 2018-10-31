@@ -32,7 +32,7 @@ export class CityService {
     ]);
   }
 
-  getCities(): Observable<City[]> {
+  getCities(nationId: number = null): Observable<City[]> {
     return of(<City[]>[
       {
         value: null,
@@ -64,6 +64,12 @@ export class CityService {
         label: 'San Francisco',
         nationId: 3
       }
-    ]);
+    ].filter(entry => {
+      if (nationId) {
+        return entry.nationId === nationId;
+      } else {
+        return true;
+      }
+    }));
   }
 }

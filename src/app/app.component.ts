@@ -22,6 +22,10 @@ export class AppComponent implements OnDestroy {
     {
       label: 'Formly Adv',
       path: '/formly-advanced'
+    },
+    {
+      label: 'Angular SF',
+      path: '/angular-sf'
     }
   ];
   mobileQuery: MediaQueryList;
