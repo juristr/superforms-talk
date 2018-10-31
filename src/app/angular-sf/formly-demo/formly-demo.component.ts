@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyFieldConfig, FormlyField } from '@ngx-formly/core';
 import { DebugComponent } from '../../shared/debug/debug.component';
 import { of } from 'rxjs';
 import { CityService } from '../../services/city.service';
@@ -21,8 +21,10 @@ export class FormlyDemoComponent implements OnInit {
     age: 33,
     nationId: 3,
     cityId: 1,
-    zipCode: 39100
+    zipCode: 39100,
+    phoneNumbers: [{ contactTypeId: 1, number: '' }]
   };
+
   fields: FormlyFieldConfig[] = [
     {
       key: 'firstname',
@@ -51,14 +53,15 @@ export class FormlyDemoComponent implements OnInit {
       key: 'cityId',
       type: 'select',
       templateOptions: {
-        label: 'City'
+        label: 'City',
+        options: []
       },
       expressionProperties: {
         'templateOptions.disabled': model => !model.nationId
       },
-      lifecycle: {
-        onInit: (form: FormGroup, field: FormlyFieldConfig) => {
-          form
+      hooks: {
+        onInit: (field: FormlyFieldConfig) => {
+          field.form
             .get('nationId')
             .valueChanges.pipe(
               startWith(this.model.nationId),
@@ -68,6 +71,44 @@ export class FormlyDemoComponent implements OnInit {
               field.templateOptions.options = data;
             });
         }
+      }
+    },
+    {
+      key: 'phoneNumbers',
+      type: 'repeat',
+      className: 'js-contacts',
+      fieldArray: {
+        className: 'js-array',
+        templateOptions: {
+          btnText: 'Add another investment'
+        },
+        fieldGroup: [
+          {
+            key: 'contactTypeId',
+            type: 'select',
+            templateOptions: {
+              label: '',
+              options: [
+                {
+                  value: 1,
+                  label: 'Private'
+                },
+                {
+                  value: 2,
+                  label: 'Work'
+                }
+              ]
+            }
+          },
+          {
+            key: 'number',
+            type: 'input',
+            className: 'js-group',
+            templateOptions: {
+              label: 'Number'
+            }
+          }
+        ]
       }
     }
   ];

@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared';
 import { NgSelectFormlyComponent } from './formly-types/ng-select.type';
+import { RepeatTypeComponent } from './formly-types/repeat-section.type';
 
 @NgModule({
-  declarations: [AppComponent, NgSelectFormlyComponent],
+  declarations: [AppComponent, NgSelectFormlyComponent, RepeatTypeComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,6 +26,10 @@ import { NgSelectFormlyComponent } from './formly-types/ng-select.type';
         {
           name: 'my-autocomplete',
           component: NgSelectFormlyComponent
+        },
+        {
+          name: 'repeat',
+          component: RepeatTypeComponent
         }
       ]
     }),
