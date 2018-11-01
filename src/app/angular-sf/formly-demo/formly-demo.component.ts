@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormlyFieldConfig, FormlyField } from '@ngx-formly/core';
-import { DebugComponent } from '../../shared/debug/debug.component';
-import { of } from 'rxjs';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { startWith, switchMap } from 'rxjs/operators';
 import { CityService } from '../../services/city.service';
-import { switchMap, startWith } from 'rxjs/operators';
+import { DebugComponent } from '../../shared/debug/debug.component';
 
 @Component({
   selector: 'app-formly-demo',
@@ -30,7 +29,8 @@ export class FormlyDemoComponent implements OnInit {
       key: 'firstname',
       type: 'input',
       templateOptions: {
-        label: 'Firstname'
+        label: 'Firstname',
+        required: true
       }
     },
     {
@@ -54,7 +54,7 @@ export class FormlyDemoComponent implements OnInit {
       type: 'select',
       templateOptions: {
         label: 'City',
-        options: []
+        options: this.cityService.getCities()
       },
       expressionProperties: {
         'templateOptions.disabled': model => !model.nationId
@@ -67,8 +67,8 @@ export class FormlyDemoComponent implements OnInit {
               startWith(this.model.nationId),
               switchMap(nationId => this.cityService.getCities(nationId))
             )
-            .subscribe(data => {
-              field.templateOptions.options = data;
+            .subscribe(cities => {
+              field.templateOptions.options = cities;
             });
         }
       }
@@ -76,18 +76,13 @@ export class FormlyDemoComponent implements OnInit {
     {
       key: 'phoneNumbers',
       type: 'repeat',
-      className: 'js-contacts',
       fieldArray: {
-        className: 'js-array',
-        templateOptions: {
-          btnText: 'Add another investment'
-        },
         fieldGroup: [
           {
             key: 'contactTypeId',
             type: 'select',
             templateOptions: {
-              label: '',
+              label: 'Type',
               options: [
                 {
                   value: 1,
