@@ -12,7 +12,6 @@ body {
 
 .container {
   padding: 20px;
-  min-width: 200px;
   max-width: 800px;
 }
 
@@ -35,8 +34,12 @@ h3 {
 }
 
 .multi-line-row {
+  width: 100%;
+  display: block;
+
   formly-form {
     display: flex;
+    width: 100%;
 
     formly-field {
       flex-grow: 1;
@@ -45,7 +48,11 @@ h3 {
 
     .row-action-buttons {
       margin-top: 5px;
-      width: 100px;
+
+      button {
+        width: inherit;
+        height: inherit;
+      }
     }
   }
 }

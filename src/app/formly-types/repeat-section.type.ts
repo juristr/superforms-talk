@@ -15,7 +15,7 @@ import { FieldArrayType, FormlyFormBuilder } from '@ngx-formly/core';
           <button mat-icon-button color="accent" class="button-remove" type="button" *ngIf="model.length > 1" (click)="remove(i)">
             <mat-icon>clear</mat-icon>
           </button>
-          <button mat-icon-button color="primary" class="button-add" type="button" (click)="add()">
+          <button mat-icon-button color="primary" class="button-add" type="button" (click)="add()" *ngIf="i === model.length - 1">
             <mat-icon>add</mat-icon>
           </button>
         </div>
