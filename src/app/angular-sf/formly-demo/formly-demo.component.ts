@@ -38,7 +38,13 @@ export class FormlyDemoComponent implements OnInit {
       type: 'input',
       templateOptions: {
         label: 'Age',
-        type: 'number'
+        type: 'number',
+        min: 18
+      },
+      validation: {
+        messages: {
+          min: 'Sorry, you have to be of legal age.'
+        }
       }
     },
     {
