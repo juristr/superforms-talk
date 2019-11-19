@@ -906,24 +906,24 @@
     tree-kill "1.2.1"
     webpack-sources "1.4.3"
 
-"@ngx-formly/core@^5.0.0-beta.21":
+"@ngx-formly/core@^5.5.5":
   version "5.5.5"
   resolved "https://registry.yarnpkg.com/@ngx-formly/core/-/core-5.5.5.tgz#152118c18fda3bdd5f5a22376e030247ebe754cd"
   integrity sha512-h5Siao9wnpKU6b0lJnNOFDKKdBRnRScxBKHMG7yDA+3+c+pJG03R3ykQt8RSJwImPIvqPgrwP417dMPGgpTLdg==
   dependencies:
     tslib "^1.7.1"
 
-"@ngx-formly/material@^5.0.0-beta.21":
+"@ngx-formly/material@^5.5.5":
   version "5.5.5"
   resolved "https://registry.yarnpkg.com/@ngx-formly/material/-/material-5.5.5.tgz#6d0b5a5661c9f9431e7f608ab752cdb2da84a1f0"
   integrity sha512-oiWF/9YUyVgVMcoLrxFB/SMbF7ajp5v02S/DOyLBjZy1yg0LsUdiVCCZ6ZJMpOE8XjyojmpvzeORk6dEtCbgSg==
   dependencies:
     tslib "^1.9.0"
 
-"@ngx-formly/schematics@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@ngx-formly/schematics/-/schematics-0.0.1.tgz#496062bd7497b81c2495b95de2a7c7455740fead"
-  integrity sha512-JteOi5eCSJG/seCGPaN0k7u+gWPhnzqSpqaBgGQNVozAv3cEXgH567k2NrTMmZWT3DQyu8PpPE7g34YMSDfOjQ==
+"@ngx-formly/schematics@^5.5.5":
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/schematics/-/schematics-5.5.5.tgz#4f0eed320e7947503c4b2d2162876108a1c62ddd"
+  integrity sha512-C1fu6p8vD6fa/v4himFVaBQhqIIA/cKzCsWYOkomxb6s0zpN6OQ6PGxh0BgOr6dpo7h2K3AS3LlSbHo5kXySYg==
   dependencies:
     "@angular-devkit/core" "^0.6.5"
     "@angular-devkit/schematics" "^0.6.5"
