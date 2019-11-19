@@ -9,25 +9,25 @@ const routes: Routes = [
   },
   {
     path: 'angularforms',
-    loadChildren: './angularforms/angularforms.module#AngularformsModule'
+    loadChildren: () => import('./angularforms/angularforms.module').then(m => m.AngularformsModule)
   },
   {
     path: 'homemade-dynamic',
     loadChildren:
-      './homemade-dynamic/homemade-dynamic.module#HomemadeDynamicModule'
+      () => import('./homemade-dynamic/homemade-dynamic.module').then(m => m.HomemadeDynamicModule)
   },
   {
     path: 'formly-basics',
-    loadChildren: './formly-basics/formly-basics.module#FormlyBasicsModule'
+    loadChildren: () => import('./formly-basics/formly-basics.module').then(m => m.FormlyBasicsModule)
   },
   {
     path: 'formly-advanced',
     loadChildren:
-      './formly-advanced/formly-advanced.module#FormlyAdvancedModule'
+      () => import('./formly-advanced/formly-advanced.module').then(m => m.FormlyAdvancedModule)
   },
   {
     path: 'angular-sf',
-    loadChildren: './angular-sf/angular-sf.module#AngularSFModule'
+    loadChildren: () => import('./angular-sf/angular-sf.module').then(m => m.AngularSFModule)
   }
 ];
 

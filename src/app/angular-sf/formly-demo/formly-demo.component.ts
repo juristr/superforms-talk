@@ -10,7 +10,7 @@ import { DebugComponent } from '../../shared/debug/debug.component';
   templateUrl: './formly-demo.component.html'
 })
 export class FormlyDemoComponent implements OnInit {
-  @ViewChild(DebugComponent)
+  @ViewChild(DebugComponent, { static: true })
   debugCmp: DebugComponent;
 
   form = new FormGroup({});

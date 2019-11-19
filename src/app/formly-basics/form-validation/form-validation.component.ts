@@ -9,7 +9,7 @@ import { of } from 'rxjs';
   templateUrl: './form-validation.component.html'
 })
 export class FormValidationComponent implements OnInit {
-  @ViewChild(DebugComponent) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
 
   cities$ = of([
     {

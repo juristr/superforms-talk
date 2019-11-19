@@ -11,7 +11,7 @@ import { CityService } from '../../services/city.service';
   templateUrl: './expression-props.component.html'
 })
 export class ExpressionPropsComponent implements OnInit {
-  @ViewChild(DebugComponent) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
 
   form = new FormGroup({});
   model: any = {

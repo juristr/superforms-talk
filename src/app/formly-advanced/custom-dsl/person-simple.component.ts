@@ -10,7 +10,7 @@ import { DebugComponent } from '../../shared/debug/debug.component';
   templateUrl: './person-simple.component.html'
 })
 export class PersonSimpleComponent implements OnInit {
-  @ViewChild(DebugComponent) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
 
   form = new FormGroup({});
   model: any = {

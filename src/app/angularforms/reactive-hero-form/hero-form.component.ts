@@ -17,7 +17,7 @@ export class HeroFormReactiveComponent implements OnInit {
 
   form: FormGroup;
 
-  @ViewChild(DebugComponent) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
 
   constructor(private fb: FormBuilder) {
     this.form = fb.group({

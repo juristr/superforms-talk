@@ -52,7 +52,7 @@ export class DebugComponent implements OnInit {
   selectedIndex = 0;
   submittedDate = null;
 
-  @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
+  @ViewChild(MatTabGroup, { static: true }) tabGroup: MatTabGroup;
 
   constructor() {}
 

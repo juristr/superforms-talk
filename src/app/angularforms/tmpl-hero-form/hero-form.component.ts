@@ -15,7 +15,7 @@ export class HeroFormTemplateComponent implements OnInit {
     twitter: '@maxim_koretskyi'
   };
 
-  @ViewChild(DebugComponent) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
 
   constructor() {}
 

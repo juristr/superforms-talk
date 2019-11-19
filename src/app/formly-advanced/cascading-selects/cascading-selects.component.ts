@@ -12,7 +12,7 @@ import { CityService } from '../../services/city.service';
 })
 export class CascadingSelectsComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
-  @ViewChild(DebugComponent) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
 
   nations$ = this.cityService.getNations();
   cities$ = this.cityService.getCities();
