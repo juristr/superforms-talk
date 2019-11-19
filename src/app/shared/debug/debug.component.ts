@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Form, FormGroup } from '@angular/forms';
-import { MatTab, MatTabGroup } from '@angular/material';
+import { MatTab, MatTabGroup } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-form-debug',
