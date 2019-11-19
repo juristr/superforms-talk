@@ -21,7 +21,7 @@
     "@angular/platform-browser": "^8.2.14",
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
-    "@ng-select/ng-select": "^2.3.5",
+    "@ng-select/ng-select": "^3.6.1",
     "@ngx-formly/core": "^5.5.5",
     "@ngx-formly/material": "^5.5.5",
     "@ngx-formly/schematics": "^5.5.5",
