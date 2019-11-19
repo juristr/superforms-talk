@@ -37,9 +37,9 @@ export class CascadingSelectsComponent implements OnInit, OnDestroy {
       expressionProperties: {
         'templateOptions.disabled': (model, formState) => !model.nationId
       },
-      lifecycle: {
-        onInit: (form, field, model) => {
-          form
+      hooks: {
+        onInit: field => {
+          field.form
             .get('nationId')
             .valueChanges.pipe(
               tap(nationId => {
