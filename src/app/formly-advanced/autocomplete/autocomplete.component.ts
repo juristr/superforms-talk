@@ -25,4 +25,6 @@ export class AutocompleteComponent implements OnInit {
   constructor(private cityService: CityService) {}
 
   ngOnInit() {}
+
+  onSubmit({ value, valid }) {}
 }
