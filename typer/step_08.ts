@@ -37,45 +37,15 @@ export class FormlyDemoComponent implements OnInit {
       type: "input",
       templateOptions: {
         label: "Age",
-        type: "number",
-        min: 18
-      },
-      validation: {
-        messages: {
-          min: "Sorry, you have to be of legal age."
-        }
+        type: "number"
       }
     },
     {
       key: "nationId",
-      type: "my-autocomplete",
+      type: "select",
       templateOptions: {
         label: "Nation",
         options: this.cityService.getNations()
-      }
-    },
-    {
-      key: "cityId",
-      type: "select",
-      templateOptions: {
-        label: "City",
-        options: this.cityService.getCities()
-      },
-      expressionProperties: {
-        "templateOptions.disabled": model => !model.nationId
-      },
-      hooks: {
-        onInit: (field: FormlyFieldConfig) => {
-          field.form
-            .get("nationId")
-            .valueChanges.pipe(
-              startWith(this.model.nationId),
-              switchMap(nationId => this.cityService.getCities(nationId))
-            )
-            .subscribe(cities => {
-              field.templateOptions.options = cities;
-            });
-        }
       }
     }
   ];

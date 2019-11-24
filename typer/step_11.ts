@@ -37,18 +37,12 @@ export class FormlyDemoComponent implements OnInit {
       type: "input",
       templateOptions: {
         label: "Age",
-        type: "number",
-        min: 18
-      },
-      validation: {
-        messages: {
-          min: "Sorry, you have to be of legal age."
-        }
+        type: "number"
       }
     },
     {
       key: "nationId",
-      type: "my-autocomplete",
+      type: "select",
       templateOptions: {
         label: "Nation",
         options: this.cityService.getNations()

@@ -10,7 +10,8 @@ import { DebugComponent } from "../../shared/debug/debug.component";
   templateUrl: "./formly-demo.component.html"
 })
 export class FormlyDemoComponent implements OnInit {
-  @ViewChild(DebugComponent, { static: true }) debugCmp: DebugComponent;
+  @ViewChild(DebugComponent, { static: true })
+  debugCmp: DebugComponent;
 
   form = new FormGroup({});
   model: any = {
@@ -36,51 +37,12 @@ export class FormlyDemoComponent implements OnInit {
       key: "age",
       type: "input",
       templateOptions: {
-        label: "Age",
-        type: "number",
-        min: 18
-      },
-      validation: {
-        messages: {
-          min: "Sorry, you have to be of legal age."
-        }
-      }
-    },
-    {
-      key: "nationId",
-      type: "my-autocomplete",
-      templateOptions: {
-        label: "Nation",
-        options: this.cityService.getNations()
-      }
-    },
-    {
-      key: "cityId",
-      type: "select",
-      templateOptions: {
-        label: "City",
-        options: this.cityService.getCities()
-      },
-      expressionProperties: {
-        "templateOptions.disabled": model => !model.nationId
-      },
-      hooks: {
-        onInit: (field: FormlyFieldConfig) => {
-          field.form
-            .get("nationId")
-            .valueChanges.pipe(
-              startWith(this.model.nationId),
-              switchMap(nationId => this.cityService.getCities(nationId))
-            )
-            .subscribe(cities => {
-              field.templateOptions.options = cities;
-            });
-        }
+        label: "Age"
       }
     }
   ];
 
-  constructor(private cityService: CityService) {}
+  constructor() {}
 
   ngOnInit() {}
 

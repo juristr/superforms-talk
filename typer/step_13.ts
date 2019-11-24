@@ -39,11 +39,6 @@ export class FormlyDemoComponent implements OnInit {
         label: "Age",
         type: "number",
         min: 18
-      },
-      validation: {
-        messages: {
-          min: "Sorry, you have to be of legal age."
-        }
       }
     },
     {
