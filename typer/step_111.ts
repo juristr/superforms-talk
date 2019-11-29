@@ -60,15 +60,12 @@ export class FormlyDemoComponent implements OnInit {
       },
       hooks: {
         onInit: (field: FormlyFieldConfig) => {
-          field.form
+          field.templateOptions.options = field.form
             .get("nationId")
             .valueChanges.pipe(
               startWith(this.model.nationId),
               switchMap(nationId => this.cityService.getCities(nationId))
-            )
-            .subscribe(cities => {
-              field.templateOptions.options = cities;
-            });
+            );
         }
       }
     }

@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Observable, of } from "rxjs";
+import { delay } from "rxjs/operators";
+
+const API_DELAY = 0;
 
 export interface City {
   value: number;
@@ -8,68 +11,70 @@ export interface City {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class CityService {
   getNations() {
     return of([
       {
         value: null,
-        label: ' -- '
+        label: " -- "
       },
       {
         value: 1,
-        label: 'Italy'
+        label: "Italy"
       },
       {
         value: 2,
-        label: 'Germany'
+        label: "Germany"
       },
       {
         value: 3,
-        label: 'U.S.'
+        label: "U.S."
       }
     ]);
   }
 
   getCities(nationId: number = null): Observable<City[]> {
-    return of(<City[]>[
-      {
-        value: null,
-        label: ' -- ',
-        nationId: null
-      },
-      {
-        value: 1,
-        label: 'Bolzano',
-        nationId: 1
-      },
-      {
-        value: 12,
-        label: 'Rome',
-        nationId: 1
-      },
-      {
-        value: 2,
-        label: 'Berlin',
-        nationId: 2
-      },
-      {
-        value: 21,
-        label: 'Munich',
-        nationId: 2
-      },
-      {
-        value: 3,
-        label: 'San Francisco',
-        nationId: 3
-      }
-    ].filter(entry => {
-      if (nationId) {
-        return entry.nationId === nationId;
-      } else {
-        return true;
-      }
-    }));
+    return of(
+      <City[]>[
+        {
+          value: null,
+          label: " -- ",
+          nationId: null
+        },
+        {
+          value: 1,
+          label: "Bolzano",
+          nationId: 1
+        },
+        {
+          value: 12,
+          label: "Rome",
+          nationId: 1
+        },
+        {
+          value: 2,
+          label: "Berlin",
+          nationId: 2
+        },
+        {
+          value: 21,
+          label: "Munich",
+          nationId: 2
+        },
+        {
+          value: 3,
+          label: "San Francisco",
+          nationId: 3
+        }
+      ].filter(entry => {
+        if (nationId) {
+          return entry.nationId === nationId;
+        } else {
+          return true;
+        }
+      })
+    ).pipe(delay(API_DELAY));
   }
 }

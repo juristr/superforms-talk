@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FormlyFieldConfig } from "@ngx-formly/core";
-import { startWith, switchMap } from "rxjs/operators";
+import { startWith, switchMap, tap } from "rxjs/operators";
 import { CityService } from "../../services/city.service";
 import { DebugComponent } from "../../shared/debug/debug.component";
 
@@ -66,15 +66,16 @@ export class FormlyDemoComponent implements OnInit {
       },
       hooks: {
         onInit: (field: FormlyFieldConfig) => {
-          field.form
+          field.templateOptions.options = field.form
             .get("nationId")
             .valueChanges.pipe(
               startWith(this.model.nationId),
+              tap(() => {
+                field.formControl.setValue(null);
+                field.className += " formly-loader";
+              }),
               switchMap(nationId => this.cityService.getCities(nationId))
-            )
-            .subscribe(cities => {
-              field.templateOptions.options = cities;
-            });
+            );
         }
       }
     }
