@@ -28,8 +28,7 @@ export class FormlyDemoComponent implements OnInit {
       key: "firstname",
       type: "input",
       templateOptions: {
-        label: "Firstname",
-        required: true
+        label: "Firstname"
       }
     },
     {
@@ -53,7 +52,7 @@ export class FormlyDemoComponent implements OnInit {
       type: "select",
       templateOptions: {
         label: "City",
-        options: this.cityService.getCities()
+        options: []
       },
       hooks: {
         onInit: (field: FormlyFieldConfig) => {

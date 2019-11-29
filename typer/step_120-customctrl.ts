@@ -41,7 +41,7 @@ export class FormlyDemoComponent implements OnInit {
     },
     {
       key: "nationId",
-      type: "select",
+      type: "my-autocomplete",
       templateOptions: {
         label: "Nation",
         options: this.cityService.getNations()
@@ -55,8 +55,10 @@ export class FormlyDemoComponent implements OnInit {
         options: []
       },
       expressionProperties: {
-        "templateOptions.disabled": model => !model.nationId
+        "templateOptions.disabled": model => !model.nationId,
+        "model.cityId": "!model.nationId ? null : model.cityId"
       },
+      hideExpression: model => !model.nationId,
       hooks: {
         onInit: (field: FormlyFieldConfig) => {
           field.form

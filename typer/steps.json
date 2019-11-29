@@ -45,7 +45,15 @@
   },
   {
     "file": "src/app/angular-sf/formly-demo/formly-demo.component.ts",
-    "content": "typer/step_120.ts"
+    "content": "typer/step_111.ts"
+  },
+  {
+    "file": "src/app/angular-sf/formly-demo/formly-demo.component.ts",
+    "content": "typer/step_112.ts"
+  },
+  {
+    "file": "src/app/angular-sf/formly-demo/formly-demo.component.ts",
+    "content": "typer/step_120-customctrl.ts"
   },
   {
     "file": "src/app/angular-sf/formly-demo/formly-demo.component.ts",

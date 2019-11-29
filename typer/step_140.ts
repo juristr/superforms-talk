@@ -59,11 +59,13 @@ export class FormlyDemoComponent implements OnInit {
       type: "select",
       templateOptions: {
         label: "City",
-        options: this.cityService.getCities()
+        options: []
       },
       expressionProperties: {
-        "templateOptions.disabled": model => !model.nationId
+        "templateOptions.disabled": model => !model.nationId,
+        "model.cityId": "!model.nationId ? null : model.cityId"
       },
+      hideExpression: model => !model.nationId,
       hooks: {
         onInit: (field: FormlyFieldConfig) => {
           field.form
