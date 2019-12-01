@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { delay } from "rxjs/operators";
 
-const API_DELAY = 0;
+const API_DELAY = 5000;
 
 export interface City {
   value: number;
